@@ -1,0 +1,7 @@
+Assignment :-  Favorite Movie Directory.
+
+1. Create a form that takes show name ( Movie name ), rating (1-5) & duration in minutes.
+2. Create a table for show movies listing order by duration descending.
+3. Create a search form for filter movies by name.
+4. When new record is added it should be immediately visible only if matches the given search query.
+5. If list is empty then it will "no records"
