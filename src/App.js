@@ -11,7 +11,8 @@ class App extends Component {
     this.state = { 
       movies : [
         
-      ]
+      ],
+      query: ""
      }
   }
 
@@ -22,15 +23,16 @@ class App extends Component {
  }
 
  handleSearchMovie = (query) =>{
-  const movies = this.state.movies.filter(mov =>{ return mov.movieName.toLowerCase().includes(query.toLowerCase())});
-    this.setState({ movies });
+   this.setState({query})
+ // const movies = this.state.movies.filter(mov =>{ return mov.movieName.toLowerCase().includes(query.toLowerCase())});
+   // this.setState({ movies });
  }
   render() { 
     return (
       <div>
         <SearchMoviesList 
         searchMovie = {this.handleSearchMovie}/>
-       <MoviesList movies ={this.state.movies}/>
+       <MoviesList movies ={this.state.movies} query={this.state.query}/>
        <AddShow 
        addMovie={this.addToMoviesList}
        />

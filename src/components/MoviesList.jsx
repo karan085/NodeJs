@@ -3,12 +3,11 @@ import Movie from './Movie';
 class MoviesList extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-          
-          }
     }
    
     render() { 
+      const {movies, query} = this.props;
+      const filteredMovies = movies.filter(mov =>{ return mov.movieName.toLowerCase().includes(query.toLowerCase())});
       if(this.props.movies.length === 0){
         return <h3 className="label label-default">No Movie Show Available</h3>
       }
@@ -23,7 +22,7 @@ class MoviesList extends Component {
                 </tr>
               </thead>
               <tbody>
-              {this.props.movies.sort((a, b) => a.duration - b.duration).reverse().map((m,i) => ( <Movie movie={m} 
+              {filteredMovies.sort((a, b) => a.duration - b.duration).reverse().map((m,i) => ( <Movie movie={m} 
               key ={i}></Movie> ))}
         </tbody>
             </table>

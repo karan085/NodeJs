@@ -7,7 +7,7 @@ class SearchMoviesList extends Component {
          }
     }
     handleSearch = (e) =>{
-        this.setState({[e.target.name]: e.target.value});
+        this.setState({[e.target.name]: e.target.value.trim()});
         this.props.searchMovie(this.state.query);
     }
     render() { 
